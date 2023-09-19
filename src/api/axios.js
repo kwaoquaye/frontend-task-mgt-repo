@@ -6,6 +6,7 @@ axios.interceptors.request.use(
   (config) => {
     const { token } = store.getState().auth;
     if (token) config.headers.Authorization = `Bearer ${token}`;
+    console.log({config});
     return config;
   },
   (error) => {
